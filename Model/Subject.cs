@@ -28,7 +28,12 @@ namespace EF_Practice
         [Column("End_Date", TypeName = "DateTime")]
         [DataType(DataType.DateTime)]
         public DateTime endDate { get; set; }
-        public Teacher? teacher { get; set; }
+        public Teacher teacher { get; set; }
+
+        public override string ToString()
+        {
+            return $"{ID, -10}{name, -30}{credit, -8}{startDate, -30}{endDate, -30}{teacher.ID}";
+        }
 
     }
 }

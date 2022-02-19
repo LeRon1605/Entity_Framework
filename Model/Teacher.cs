@@ -5,10 +5,10 @@ namespace EF_Practice
     [Table("Teacher")]
     class Teacher: Person
     {
-        public List<Subject> subjects {get; set;}
+        public List<Subject>? subjects {get; set;}
 
         [ForeignKey("classID")]
-        public int classID { get; set; }
+        public int? classID { get; set; }
         public Class classRoom { get; set; }
     }
 }

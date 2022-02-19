@@ -1,0 +1,2 @@
+C:\Users\Admin\OneDrive\Documents\DUT-K20\Semester 4\.NET\Code\EF_Practice\obj\x86\Debug\ef_practice.csproj.AssemblyReference.cache
+C:\Users\Admin\OneDrive\Documents\DUT-K20\Semester 4\.NET\Code\EF_Practice\obj\x86\Debug\ef_practice.csproj.CoreCompileInputs.cache

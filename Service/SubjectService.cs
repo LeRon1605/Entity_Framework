@@ -2,7 +2,8 @@ namespace EF_Practice
 {
     class SubjectService
     {
-        public static async Task getListStudentsOfSubject(int subjectID)
+
+        public static async Task<List<Student>> getListStudentsOfSubject(int subjectID)
         {
             StudentDbContext context = new StudentDbContext();
             Subject subject = await context.subjects.FindAsync(subjectID);
@@ -14,12 +15,26 @@ namespace EF_Practice
                     entry.Reference(e => e.student).Load();
                     return record.student;
                 });
-                Console.WriteLine($"{"ID",-10}{"Name",-20}{"Gender",-10}{"Address",-20}{"Email",-20}{"PhoneNumber"}");
-                foreach (var student in students)
-                {
-                    Console.WriteLine(student.ToString());
-                }
-            }else Console.WriteLine("Subject does not exist");
+                return students.ToList();
+            }else {
+                Console.WriteLine("Subject does not exist");
+                return null;
+            }
+        }
+
+        public static async Task<Teacher> getTeacherOfSubject(int subjectID)
+        {
+            StudentDbContext context = new StudentDbContext();
+            Subject subject = await context.subjects.FindAsync(subjectID);
+            if (subject != null)
+            {
+                var entry = context.Entry(subject);
+                entry.Reference(e => e.teacher).Load();
+                return subject.teacher;
+            }else {
+                Console.WriteLine("Subject does not exist");
+                return null;
+            }
         }
     }
 }

@@ -27,6 +27,8 @@ namespace EF_Practice
 
             if (obj is Student) context.students.Add((Student)obj);
             else if (obj is Subject) context.subjects.Add((Subject)obj);
+            else if (obj is Class) context.classes.Add((Class)obj);
+            else if (obj is Teacher) context.teachers.Add((Teacher)obj);
             int affectedRow = await context.SaveChangesAsync();
             Console.WriteLine($"{affectedRow} row affected");
         }
