@@ -33,6 +33,20 @@ namespace EF_Practice
         [Phone]
         public string phoneNumber { get; set; }
 
+        public virtual async Task input()
+        {
+            Console.Write("Name: ");
+            name = Console.ReadLine();
+            Console.Write("Gender: ");
+            gender = Console.ReadLine();
+            Console.Write("Address: ");
+            address = Console.ReadLine();
+            Console.Write("Email: ");
+            email = Console.ReadLine();
+            Console.Write("Phone: ");
+            phoneNumber = Console.ReadLine();
+        }
+
         public override string ToString()
         {
             return $"{ID, -10}{name, -20}{gender, -10}{address, -20}{email, -20}{phoneNumber}";

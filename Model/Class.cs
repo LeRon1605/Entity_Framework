@@ -13,7 +13,12 @@ namespace EF_Practice
         [Required]
         [MaxLength(20)]
         public string name { get; set; }
-        public List<Student>? students { get; set; }
+        public List<Student> students { get; set; }
         public Teacher teacher { get; set; }
+
+        public void input() { 
+            Console.Write("Name: ");
+            name = Console.ReadLine();
+        }
     }
 }
